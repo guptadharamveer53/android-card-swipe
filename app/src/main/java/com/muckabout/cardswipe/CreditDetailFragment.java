@@ -21,7 +21,7 @@ import java.util.Random;
 /**
  * @author lydialim on 02/05/2016.
  */
-public class SectionDetailFragment extends Fragment {
+public class CreditDetailFragment extends Fragment {
 
     // can be replace with enum type
     private final static String POSITION_PARAM = "pos";
@@ -37,8 +37,8 @@ public class SectionDetailFragment extends Fragment {
      *
      * @return A new instance of fragment CategoryFragment.
      */
-    public static SectionDetailFragment newInstance (int position) {
-        SectionDetailFragment fragment = new SectionDetailFragment();
+    public static CreditDetailFragment newInstance (int position) {
+        CreditDetailFragment fragment = new CreditDetailFragment();
         Bundle args = new Bundle();
         args.putInt(POSITION_PARAM, position);
         fragment.setArguments(args);
@@ -57,7 +57,7 @@ public class SectionDetailFragment extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_section_detail, container, false);
+        final View view = inflater.inflate(R.layout.credit_detail_fragment, container, false);
         final FragmentActivity activity = getActivity();
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.card_detail_list);

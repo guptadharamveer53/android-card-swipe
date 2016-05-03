@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SectionDetailFragment">
+    tools:context=".CreditDetailFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/card_detail_list"

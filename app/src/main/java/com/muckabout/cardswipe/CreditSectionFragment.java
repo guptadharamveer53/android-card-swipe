@@ -1,6 +1,5 @@
 package com.muckabout.cardswipe;
 
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,7 +11,7 @@ import android.view.ViewGroup;
 /**
  * @author lydialim on 02/05/2016.
  */
-public class SectionFragment extends Fragment {
+public class CreditSectionFragment extends Fragment {
 
     // can be replace with enum type
     private final static String POSITION_PARAM = "pos";
@@ -25,8 +24,8 @@ public class SectionFragment extends Fragment {
      *
      * @return A new instance of fragment CategoryFragment.
      */
-    public static SectionFragment newInstance (int position) {
-        SectionFragment fragment = new SectionFragment();
+    public static CreditSectionFragment newInstance (int position) {
+        CreditSectionFragment fragment = new CreditSectionFragment();
         Bundle args = new Bundle();
         args.putInt(POSITION_PARAM, position);
         fragment.setArguments(args);
@@ -45,7 +44,7 @@ public class SectionFragment extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_section, container, false);
+        final View view = inflater.inflate(R.layout.credit_fragment, container, false);
 
         CardView card = (CardView) view.findViewById(R.id.main_card_view);
         card.setCardBackgroundColor(getCardColor(mPosition));
@@ -62,6 +61,6 @@ public class SectionFragment extends Fragment {
             return Color.rgb(156, 39, 176);
         }
 
-        return Color.rgb(0,150,136);
+        return Color.rgb(0, 150, 136);
     }
 }

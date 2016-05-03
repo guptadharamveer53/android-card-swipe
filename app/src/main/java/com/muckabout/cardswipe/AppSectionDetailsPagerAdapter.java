@@ -18,7 +18,7 @@ public class AppSectionDetailsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        return SectionDetailFragment.newInstance(i);
+        return CreditDetailFragment.newInstance(i);
     }
 
     @Override
