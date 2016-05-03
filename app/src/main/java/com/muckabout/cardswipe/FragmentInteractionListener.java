@@ -11,5 +11,6 @@ package com.muckabout.cardswipe;
  * >Communicating with Other Fragments</a> for more information.
  */
 public interface FragmentInteractionListener {
-    void onFragmentInteraction (int page);
+
+    // nothing here for now
 }

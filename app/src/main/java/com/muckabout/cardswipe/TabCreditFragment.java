@@ -11,12 +11,15 @@ import android.view.ViewGroup;
 
 /**
  * @author lydialim on 03/05/2016.
+ *
+ * Credits :
+ * https://mzgreen.github.io/2015/06/23/How-to-hideshow-Toolbar-when-list-is-scrolling%28part3%29/
  */
-public class TabCreditFragment extends Fragment implements FragmentInteractionListener {
+public class TabCreditFragment extends Fragment {
 
     private final static int NUM_CATEGORIES = 3;
 
-    private AppSectionsPagerAdapter mPagerAdapter;
+    private AppSectionsPagerAdapter       mPagerAdapter;
     private AppSectionDetailsPagerAdapter mDetailPagerAdapter;
 
     /**
@@ -63,12 +66,6 @@ public class TabCreditFragment extends Fragment implements FragmentInteractionLi
         });
 
         return view;
-    }
-
-
-    @Override
-    public void onFragmentInteraction (int page) {
-
     }
 
     private class MasterViewPagerListener extends ViewPager.SimpleOnPageChangeListener {

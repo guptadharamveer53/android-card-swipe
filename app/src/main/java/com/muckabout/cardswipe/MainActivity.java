@@ -2,19 +2,18 @@ package com.muckabout.cardswipe;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements FragmentInteractionListener {
 
     public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,4 +76,26 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    /**
+     * Find child fragment by class type
+     * @param type
+     * @param <T>
+     * @return
+     */
+    private <T extends Fragment> T findFragment (Class<T> type)
+    {
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+
+        for (int i = fragments.size() - 1; i >= 0; i--) {
+            Fragment fragment = fragments.get(i);
+            if (type.isInstance(fragment)) {
+                T t = type.cast(fragment);
+                return t;
+            }
+        }
+
+        return null;
+    }
+
 }

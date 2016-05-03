@@ -56,7 +56,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ListViewHolder> {
 
         } else if (holder instanceof HeaderListViewHolder) {
             HeaderListViewHolder vh = (HeaderListViewHolder) holder;
-            vh.setContext("ELIGIBLE PURCHASES");
+            vh.setContext("SECTION HEADER");
         }
     }
 

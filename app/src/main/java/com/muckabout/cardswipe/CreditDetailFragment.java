@@ -1,10 +1,12 @@
 package com.muckabout.cardswipe;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +27,8 @@ public class CreditDetailFragment extends Fragment {
 
     // can be replace with enum type
     private final static String POSITION_PARAM = "pos";
+
+    private FragmentInteractionListener mCallback;
 
     private RecyclerView        mRecyclerView;
     private LinearLayoutManager mLayoutManager;
@@ -50,6 +54,15 @@ public class CreditDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mPosition = getArguments().getInt(POSITION_PARAM);
+        }
+    }
+
+    @Override
+    public void onAttach (Context context) {
+        super.onAttach(context);
+
+        if (context instanceof FragmentInteractionListener) {
+            mCallback = (FragmentInteractionListener) context;
         }
     }
 
