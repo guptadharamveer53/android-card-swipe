@@ -18,6 +18,11 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
+    public CharSequence getPageTitle (int position) {
+        return "Tab " + position;
+    }
+
+    @Override
     public Fragment getItem (int position) {
         switch (position) {
             case 0:
